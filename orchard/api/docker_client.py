@@ -48,7 +48,7 @@ class DockerClient(docker.Client):
             'stdout': 1,
             'stderr': 1
         }
-        socket = self.attach_websocket(container, params)
+        socket = self.attach_socket(container, params, ws=True)
         out = []
         while True:
             c = socket.recv()
